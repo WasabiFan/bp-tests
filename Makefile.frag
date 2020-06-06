@@ -52,7 +52,7 @@ BP_DEMOS_C = \
   stream_hammer         \
   domain_fault          \
   eaddr_fault           \
-  manycore_poke         \
+  manycore_poke_mmio    \
   manycore_poke_fifo
 
 BP_DEMOS_S = \
