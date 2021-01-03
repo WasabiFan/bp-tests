@@ -1,7 +1,7 @@
 
 include Makefile.frag
 
-RISCV_GCC  = $(CROSS_COMPILE)gcc --static -nostartfiles -fPIC -march=rv64ima -mabi=lp64 -mcmodel=medany -I$(BP_TEST_DIR)/include
+RISCV_GCC  = $(CROSS_COMPILE)gcc --static -nostartfiles -fPIC -march=rv64imafd -mabi=lp64 -mcmodel=medany -I$(BP_TEST_DIR)/include
 RISCV_LINK = -static -nostartfiles -L$(BP_TEST_DIR)/lib -T src/riscv.ld
 
 .PHONY: all bp-demo-riscv bp-demo-s
@@ -40,6 +40,7 @@ mc_work_share_sort_%.s:
 
 clean:
 	rm -f *.riscv
+	rm -f $(foreach x,$(subst -,_,$(BP_DEMOS_C)),src/$(x).s)
 	rm -f src/atomic_queue_demo_*.s
 	rm -f src/mc_sanity_*.s
 	rm -f src/mc_template_*.s

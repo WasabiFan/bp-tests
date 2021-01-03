@@ -50,9 +50,10 @@ BP_DEMOS_C = \
   cache_flush
 
 BP_DEMOS_S = \
-	simple                \
-	uc_simple             \
-  hello_world           \
+  simple     \
+  uc_simple  \
+  fp_sp2dp   \
+  hello_world
 
 BP_DEMOS = $(BP_DEMOS_S) $(BP_DEMOS_C)
 
